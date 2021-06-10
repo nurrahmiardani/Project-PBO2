@@ -1,5 +1,6 @@
 import wx
 import Awalan
+import sqlite3
 
 class Pilihan(Awalan.pilihan_frame):
     def __init__(self, parent):
@@ -38,6 +39,22 @@ class Registrasi_penjahit(Awalan.regis_penjahit_frame):
     def regis_penjahitOnButtonClick(self, event):
         log = Login_penjahit(parent=self)
         log.Show()
+        username = self.username_baru.GetValue()
+        password = self.pass_baru.GetValue()
+        if username == "" :
+            wx.MessageBox("Username harus terisi!")
+        elif password == "" :
+            wx.MessageBox("Password harus terisi!")
+        else :
+            conn = sqlite3.connect('pesananbaju.db')
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO akun_penjahit(username,password) VALUES(?,?)"),(username,password)
+            conn.commit()
+            conn.close()
+            wx.MessageBox("Data BERHASIL disimpan")
+            if(wx.OK):
+                self.Destroy()
+
 
 
 class Login_Pelanggan(Awalan.login_pelanggan_frame):
