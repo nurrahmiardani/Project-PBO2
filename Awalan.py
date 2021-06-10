@@ -50,7 +50,7 @@ class pilihan_frame ( wx.Frame ):
 		self.m_panel14 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		gSizer6 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.penjahit_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Admin", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.penjahit_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Penjahit", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.penjahit_btn.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOTEXT ) )
 
 		gSizer6.Add( self.penjahit_btn, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
