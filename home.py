@@ -172,7 +172,7 @@ class MyFrame2 ( wx.Frame ):
 class MyFrame3 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 300,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -187,6 +187,16 @@ class MyFrame3 ( wx.Frame ):
 		bSizer4.Add( self.m_staticText4, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
+
+		self.m_staticText19 = wx.StaticText( self, wx.ID_ANY, u"Nama", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText19.Wrap( -1 )
+
+		self.m_staticText19.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		gSizer2.Add( self.m_staticText19, 0, wx.ALL, 5 )
+
+		self.isinama = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.isinama, 0, wx.ALL, 5 )
 
 		self.m_staticText7 = wx.StaticText( self, wx.ID_ANY, u"Jenis Kain", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText7.Wrap( -1 )
@@ -262,7 +272,7 @@ class MyFrame3 ( wx.Frame ):
 class MyFrame4 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 300,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -278,12 +288,22 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.m_staticText7 = wx.StaticText( self, wx.ID_ANY, u"Jenis Kain", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7 = wx.StaticText( self, wx.ID_ANY, u"Nama", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText7.Wrap( -1 )
 
 		self.m_staticText7.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
 		gSizer2.Add( self.m_staticText7, 0, wx.ALL, 5 )
+
+		self.isinamaa = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.isinamaa, 0, wx.ALL, 5 )
+
+		self.m_staticText21 = wx.StaticText( self, wx.ID_ANY, u"Jenis Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText21.Wrap( -1 )
+
+		self.m_staticText21.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		gSizer2.Add( self.m_staticText21, 0, wx.ALL, 5 )
 
 		self.isijeniscelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		gSizer2.Add( self.isijeniscelana, 0, wx.ALL, 5 )
@@ -370,7 +390,7 @@ class MyFrame9 ( wx.Frame ):
 		self.tabelkain = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.tabelkain.CreateGrid( 5, 5 )
+		self.tabelkain.CreateGrid( 0, 5 )
 		self.tabelkain.EnableEditing( True )
 		self.tabelkain.EnableGridLines( True )
 		self.tabelkain.EnableDragGridSize( False )
@@ -415,30 +435,49 @@ class MyFrame9 ( wx.Frame ):
 
 
 ###########################################################################
-## Class MyFrame10
+## Class MyFrame7
 ###########################################################################
 
-class MyFrame10 ( wx.Frame ):
+class MyFrame7 ( wx.Frame ):
 
 	def __init__( self, parent ):
 		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
 
-		bSizer10 = wx.BoxSizer( wx.VERTICAL )
+		bSizer8 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_staticText29 = wx.StaticText( self, wx.ID_ANY, u"MyLabel", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText29.Wrap( -1 )
+		self.inputnama = wx.StaticText( self, wx.ID_ANY, u"Masukkan Namamu", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.inputnama.Wrap( -1 )
 
-		bSizer10.Add( self.m_staticText29, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.inputnama.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer8.Add( self.inputnama, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_textCtrl13 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer8.Add( self.m_textCtrl13, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.klikcari = wx.Button( self, wx.ID_ANY, u"Cari", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.klikcari.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer8.Add( self.klikcari, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
-		self.SetSizer( bSizer10 )
+		self.SetSizer( bSizer8 )
 		self.Layout()
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.klikcari.Bind( wx.EVT_BUTTON, self.btn_cari )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def btn_cari( self, event ):
+		event.Skip()
 
 

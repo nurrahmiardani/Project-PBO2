@@ -9,7 +9,7 @@ class frame (home.MyFrame1):
         b = frame2(parent=self)
         b.Show()
     def btn_daftar(self, event):
-        c = frame3(parent=self)
+        c = DaftarPesan(parent=self)
         c.Show()
   
         
@@ -24,9 +24,17 @@ class frame2(home.MyFrame2):
         celana = framecelana(parent=self)
         celana.Show()
 
-class frame3(home.MyFrame9):
+class DaftarPesan(home.MyFrame9):
     def __init__(self, parent):
         super().__init__(parent)
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = cursor.execute("select * from baju").fetchall()
+        conn.close()
+        for baris in range(len(data)):
+            self.tabelkain.AppendRows()
+            for kolom in range (len(data[baris])) :
+                self.tabelkain.SetCellValue(baris, kolom, str(data[baris][kolom]))
 
 
 class framebaju (home.MyFrame3):
@@ -37,6 +45,7 @@ class framebaju (home.MyFrame3):
         warna = self.isiwarna.GetValue()
         lebar = self.isilebar.GetValue()
         panjang = self.isipanjang.GetValue()
+        nama = self.isinama.GetValue()
 
         if jenis == '' or lebar =='' or panjang =='' or warna =='':
             wx.MessageBox ('Isian harus lengkap', 'Peringatan data kosong')
@@ -45,7 +54,7 @@ class framebaju (home.MyFrame3):
         else :
             conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
-            cursor.execute("INSERT INTO baju (jenis,warna,lingkar_dada,panjang_baju) VALUES (?,?,?,?)",(jenis,warna,lebar,panjang))
+            cursor.execute("INSERT INTO baju (jenis,warna,lingkar_dada,panjang_baju,nama) VALUES (?,?,?,?,?)",(jenis,warna,lebar,panjang,nama))
             conn.commit()
             conn.close()
             wx.MessageBox ('Data berhasil disimpan', 'Data berhasil disimpan')
