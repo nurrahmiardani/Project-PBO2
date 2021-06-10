@@ -78,17 +78,17 @@ class MyFrame1 ( wx.Frame ):
 		self.m_panel11 = wx.Panel( self.m_panel7, wx.ID_ANY, wx.Point( -1,-1 ), wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer10 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_textCtrl15 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.Point( -1,-1 ), wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl15, 0, wx.ALL, 5 )
+		self.inputJenis = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.Point( -1,-1 ), wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputJenis, 0, wx.ALL, 5 )
 
-		self.m_textCtrl16 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl16, 0, wx.ALL, 5 )
+		self.inputWarna = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputWarna, 0, wx.ALL, 5 )
 
-		self.m_textCtrl17 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl17, 0, wx.ALL, 5 )
+		self.inputHarga = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputHarga, 0, wx.ALL, 5 )
 
-		self.m_textCtrl18 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+		self.inputStok = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputStok, 0, wx.ALL, 5 )
 
 
 		self.m_panel11.SetSizer( bSizer10 )
