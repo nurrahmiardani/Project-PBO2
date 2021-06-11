@@ -46,8 +46,7 @@ class Login_penjahit(Awalan.login_penjahit_frame):
                 login.Show()
                 # if(wx.OK):
                 #     self.Destroy()
-                logpenjahit = Kain(parent=self)
-                logpenjahit.Show()
+               
         
                     
         else :
