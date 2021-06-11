@@ -527,8 +527,7 @@ class MyFrame7 ( wx.Frame ):
 		self.tabelcelana.SetColLabelValue( 2, u"Lingkar Pinggang" )
 		self.tabelcelana.SetColLabelValue( 3, u"Panjang Celana" )
 		self.tabelcelana.SetColLabelValue( 4, u"Nama" )
-		self.tabelcelana.SetColLabelValue( 5, u"Jenis" )
-		self.tabelcelana.SetColLabelValue( 6, u"Status" )
+		self.tabelcelana.SetColLabelValue( 5, u"Status" )
 		self.tabelcelana.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
