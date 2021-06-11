@@ -18,7 +18,7 @@
         <property name="internationalize">0</property>
         <property name="name">penjahit</property>
         <property name="namespace"></property>
-        <property name="path">D:\kuliah\smt 4\pbo2\projek\Project-PBO2</property>
+        <property name="path">D:\PWEB\Project-PBO2</property>
         <property name="precompiled_header"></property>
         <property name="relative_path">1</property>
         <property name="skip_lua_events">1</property>
@@ -54,6 +54,7 @@
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
             <property name="xrc_skip_sizer">1</property>
+            <event name="OnClose">DataKain</event>
             <object class="wxBoxSizer" expanded="1">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer4</property>
@@ -1406,7 +1407,7 @@
                                     <property name="minimize_button">0</property>
                                     <property name="minimum_size"></property>
                                     <property name="moveable">1</property>
-                                    <property name="name">tabelkain</property>
+                                    <property name="name">tabelsemwakain</property>
                                     <property name="pane_border">1</property>
                                     <property name="pane_position"></property>
                                     <property name="pane_size"></property>

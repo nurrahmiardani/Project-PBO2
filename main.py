@@ -110,6 +110,7 @@ class Kain(desain.MyFrame1):
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
+<<<<<<< Updated upstream
             # for baris in range(len(data)):
             #     self.m_grid1.DeleteRows(data)
             #     for kolom in range (len(data[baris])):
@@ -124,6 +125,12 @@ class Kain(desain.MyFrame1):
             self.items.pop(selected)
             self.m_grid1.DeleteRows(pos=selected)
             temp.delete(datas[0])
+=======
+            for baris in range(len(data)):
+                self.m_grid1.DeleteRows()
+                for kolom in range (len(data[baris])):
+                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+>>>>>>> Stashed changes
             print("Data berhasil dihapus")
             wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 

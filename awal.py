@@ -14,6 +14,7 @@ class halaman(Awalan.halaman_awal):
         awal = Pilihan (parent=self)
         awal.Show()
     
+    
 
 class Pilihan(Awalan.pilihan_frame):
     def __init__(self, parent):
@@ -116,18 +117,12 @@ class Login_Pelanggan(Awalan.login_pelanggan_frame):
 class Beranda_penjahit(Awalan.beranda_penjahit_frame):
     def __init__(self, parent):
         super().__init__(parent)
+        
     
     def btn_pilihkan( self, event ):
         pil = Kain(parent=self)
         pil.Show()
-        conn = sqlite3.connect('pesananbaju.db')
-        cursor = conn.cursor()
-        data = cursor.execute("SELECT * FROM kain").fetchall()
-        conn.close()
-        for baris in range (len(data)):
-            self.tabelkain.AppendRows()
-            for kolom in range(len(data[baris])) :
-                self.tabelkain.SetCellValue(baris, kolom, str(data[baris][kolom]))
+        
 
 
         # conn = sqlite3.connect('pesananbaju.db')
@@ -137,7 +132,7 @@ class Beranda_penjahit(Awalan.beranda_penjahit_frame):
         # for baris in range(len(data)):
         #     self..AppendRows()
         #     for kolom in range (len(data[baris])) :
-        #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+        #         self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
 
 
     def btn_pesanan(self, event):
@@ -253,6 +248,9 @@ class frame2(home.MyFrame2):
     def btn_celana(self, event):
         celana = framecelana(parent=self)
         celana.Show()
+    
+    def MyFrame1OnClose( self, event ):
+        self.Destroy()
 
 class DaftarPesan(home.MyFrame9):
     def __init__(self, parent):
@@ -262,9 +260,9 @@ class DaftarPesan(home.MyFrame9):
         data = cursor.execute("select * from kain").fetchall()
         conn.close()
         for baris in range(len(data)):
-            self.tabelkain.AppendRows()
+            self.tabelsemwakain.AppendRows()
             for kolom in range (len(data[baris])) :
-                self.tabelkain.SetCellValue(baris, kolom, str(data[baris][kolom]))
+                self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
 
 class CariNama(home.MyFrame7):
     def __init__(self, parent):
@@ -358,6 +356,14 @@ class Registrasi_Pelanggan(Awalan.regis_pelanggan_frame):
 class Kain(desain.MyFrame1):
     def __init__(self, parent):
         super().__init__(parent)
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = cursor.execute("SELECT * FROM kain").fetchall()
+        conn.close()
+        for baris in range(len(data)):
+            self.tabelsemwakain.AppendRows()
+            for kolom in range (len(data[baris])):
+                self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
 
     def add(self, event):
         id = self.inputID.GetValue()
@@ -380,17 +386,17 @@ class Kain(desain.MyFrame1):
             conn = sqlite3.connect('pesananbaju.db') 
             cursor = conn.cursor()
             # for baris in range(len(data)):
-            #     self.m_grid1.AppendRows()
+            #     self.tabelsemwakain.AppendRows()
             #     for kolom in range (len(data[baris])):
-            #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+            #         self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
             data = cursor.execute("INSERT INTO kain (ID, jenis, warna, harga, stok) VALUES (?,?,?,?,?)", (id, jenis, warna, harga, stok))
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
             for baris in range(len(data)):
-                self.m_grid1.AppendRows()
+                self.tabelsemwakain.AppendRows()
                 for kolom in range (len(data[baris])):
-                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+                    self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil disimpan")
             wx.MessageBox ("Data berhasil disimpan", "Information", wx.OK | wx.ICON_INFORMATION)
 
@@ -424,11 +430,16 @@ class Kain(desain.MyFrame1):
             conn.commit()
             conn.close()
             for baris in range(len(data)):
-                self.m_grid1.AppendRows()
+                self.tabelsemwakain.AppendRows()
                 for kolom in range (len(data[baris])):
-                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+                    self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil diupdate")
             wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
+            self.inputID.SetValue("")
+            self.inputJenis.SetValue("")
+            self.inputWarna.SetValue("") 
+            self.inputHarga.SetValue("") 
+            self.inputStok.SetValue("") 
 
     def delete( self, event ):
         id = self.inputID.GetValue()
@@ -445,26 +456,24 @@ class Kain(desain.MyFrame1):
             # self.inputStok.SetValue("")
             conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
-            data = "DELETE from kain where ID=?"
-            isian = (id)
-            cursor.execute(data, isian)
-            conn.commit()
-            conn.close()
-            conn = sqlite3.connect('myDB.db')
-            cursor = conn.cursor()
+            data = "DELETE FROM kain where ID=?"
+            cursor.execute(data, (id,))
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
-            for baris in range(len(data)):
-                self.m_grid1.DeleteRows(id)
-                for kolom in range (len(data[baris])):
-                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+            # for baris in range(len(data)):
+            #     self.tabelsemwakain.DeleteRows()
+            #     for kolom in range (len(data[baris])):
+            #         self.tabelsemwakain.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil dihapus")
             wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 
         else : 
             print("Data gagal ")
             wx.MessageBox ("Data gagal dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
+
+    # def DataKain( self, event ):
+    #     self.Destroy()
 
 
 

@@ -145,43 +145,43 @@ class MyFrame1 ( wx.Frame ):
 		self.m_panel6 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer6 = wx.BoxSizer( wx.VERTICAL )
 
-		self.tabelkain = wx.grid.Grid( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.tabelsemwakain = wx.grid.Grid( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.tabelkain.CreateGrid( 5, 5 )
-		self.tabelkain.EnableEditing( True )
-		self.tabelkain.EnableGridLines( True )
-		self.tabelkain.EnableDragGridSize( False )
-		self.tabelkain.SetMargins( 0, 0 )
+		self.tabelsemwakain.CreateGrid( 5, 5 )
+		self.tabelsemwakain.EnableEditing( True )
+		self.tabelsemwakain.EnableGridLines( True )
+		self.tabelsemwakain.EnableDragGridSize( False )
+		self.tabelsemwakain.SetMargins( 0, 0 )
 
 		# Columns
-		self.tabelkain.EnableDragColMove( False )
-		self.tabelkain.EnableDragColSize( True )
-		self.tabelkain.SetColLabelSize( 30 )
-		self.tabelkain.SetColLabelValue( 0, u"ID" )
-		self.tabelkain.SetColLabelValue( 1, u"Jenis" )
-		self.tabelkain.SetColLabelValue( 2, u"Warna" )
-		self.tabelkain.SetColLabelValue( 3, u"Harga" )
-		self.tabelkain.SetColLabelValue( 4, u"Stok" )
-		self.tabelkain.SetColLabelValue( 5, u"warna" )
-		self.tabelkain.SetColLabelValue( 6, u"warna" )
-		self.tabelkain.SetColLabelValue( 7, u"warna" )
-		self.tabelkain.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.tabelsemwakain.EnableDragColMove( False )
+		self.tabelsemwakain.EnableDragColSize( True )
+		self.tabelsemwakain.SetColLabelSize( 30 )
+		self.tabelsemwakain.SetColLabelValue( 0, u"ID" )
+		self.tabelsemwakain.SetColLabelValue( 1, u"Jenis" )
+		self.tabelsemwakain.SetColLabelValue( 2, u"Warna" )
+		self.tabelsemwakain.SetColLabelValue( 3, u"Harga" )
+		self.tabelsemwakain.SetColLabelValue( 4, u"Stok" )
+		self.tabelsemwakain.SetColLabelValue( 5, u"warna" )
+		self.tabelsemwakain.SetColLabelValue( 6, u"warna" )
+		self.tabelsemwakain.SetColLabelValue( 7, u"warna" )
+		self.tabelsemwakain.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.tabelkain.EnableDragRowSize( True )
-		self.tabelkain.SetRowLabelSize( 80 )
-		self.tabelkain.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.tabelsemwakain.EnableDragRowSize( True )
+		self.tabelsemwakain.SetRowLabelSize( 80 )
+		self.tabelsemwakain.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
-		self.tabelkain.SetLabelBackgroundColour( wx.Colour( 80, 80, 80 ) )
-		self.tabelkain.SetLabelTextColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.tabelsemwakain.SetLabelBackgroundColour( wx.Colour( 80, 80, 80 ) )
+		self.tabelsemwakain.SetLabelTextColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		# Cell Defaults
-		self.tabelkain.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		self.tabelkain.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
+		self.tabelsemwakain.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.tabelsemwakain.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
-		bSizer6.Add( self.tabelkain, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		bSizer6.Add( self.tabelsemwakain, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
 		self.m_panel6.SetSizer( bSizer6 )
@@ -196,6 +196,7 @@ class MyFrame1 ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.Bind( wx.EVT_CLOSE, self.DataKain )
 		self.m_button7.Bind( wx.EVT_BUTTON, self.add )
 		self.m_button8.Bind( wx.EVT_BUTTON, self.edit )
 		self.m_button9.Bind( wx.EVT_BUTTON, self.delete )
@@ -205,6 +206,9 @@ class MyFrame1 ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def DataKain( self, event ):
+		event.Skip()
+
 	def add( self, event ):
 		event.Skip()
 
