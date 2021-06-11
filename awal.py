@@ -138,7 +138,6 @@ class Beranda_penjahit(Awalan.beranda_penjahit_frame):
 
 
 
-
 app = wx.App()
 a = halaman(parent=None)
 a.Show()   
