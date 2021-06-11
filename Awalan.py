@@ -11,6 +11,80 @@ import wx
 import wx.xrc
 
 ###########################################################################
+## Class halaman_awal
+###########################################################################
+
+class halaman_awal ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_MENU ) )
+		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
+
+		bSizer13 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel16 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer14 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText11 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"Selamat Datang", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText11.Wrap( -1 )
+
+		self.m_staticText11.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText11.SetForegroundColour( wx.Colour( 230, 230, 0 ) )
+		self.m_staticText11.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
+		bSizer14.Add( self.m_staticText11, 0, wx.ALIGN_CENTER|wx.ALL, 15 )
+
+		self.m_staticText12 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"Di SMARTWING", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText12.Wrap( -1 )
+
+		self.m_staticText12.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText12.SetForegroundColour( wx.Colour( 221, 221, 0 ) )
+		self.m_staticText12.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
+		bSizer14.Add( self.m_staticText12, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+		self.m_staticText13 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"^_^", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText13.Wrap( -1 )
+
+		self.m_staticText13.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText13.SetForegroundColour( wx.Colour( 235, 122, 20 ) )
+		self.m_staticText13.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_SCROLLBAR ) )
+
+		bSizer14.Add( self.m_staticText13, 0, wx.ALIGN_CENTER|wx.ALL, 15 )
+
+		self.next = wx.Button( self.m_panel16, wx.ID_ANY, u"Next", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.next.SetBackgroundColour( wx.Colour( 240, 240, 240 ) )
+
+		bSizer14.Add( self.next, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		self.m_panel16.SetSizer( bSizer14 )
+		self.m_panel16.Layout()
+		bSizer14.Fit( self.m_panel16 )
+		bSizer13.Add( self.m_panel16, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer13 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.next.Bind( wx.EVT_BUTTON, self.nextOnButtonClick )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def nextOnButtonClick( self, event ):
+		event.Skip()
+
+
+###########################################################################
 ## Class pilihan_frame
 ###########################################################################
 
@@ -30,14 +104,14 @@ class pilihan_frame ( wx.Frame ):
 		self.m_staticText12 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Silahkan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText12.Wrap( -1 )
 
-		self.m_staticText12.SetFont( wx.Font( 11, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText12.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 
 		bSizer11.Add( self.m_staticText12, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
 
 		self.m_staticText13 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Pilih Salah Satu ^_^", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.m_staticText13.Wrap( -1 )
 
-		self.m_staticText13.SetFont( wx.Font( 11, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText13.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 
 		bSizer11.Add( self.m_staticText13, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
 
@@ -217,9 +291,9 @@ class regis_penjahit_frame ( wx.Frame ):
 		self.m_panel12 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer8 = wx.BoxSizer( wx.VERTICAL )
 
-		self.regis_penjahit = wx.Button( self.m_panel12, wx.ID_ANY, u"Registrasi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.regis_penjahit = wx.Button( self.m_panel12, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.regis_penjahit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
-		self.regis_penjahit.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
+		self.regis_penjahit.SetBackgroundColour( wx.Colour( 24, 219, 19 ) )
 
 		bSizer8.Add( self.regis_penjahit, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
@@ -375,9 +449,9 @@ class regis_pelanggan_frame ( wx.Frame ):
 		self.m_panel12 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer8 = wx.BoxSizer( wx.VERTICAL )
 
-		self.regis = wx.Button( self.m_panel12, wx.ID_ANY, u"Registrasi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.regis = wx.Button( self.m_panel12, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.regis.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
-		self.regis.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
+		self.regis.SetBackgroundColour( wx.Colour( 26, 210, 26 ) )
 
 		bSizer8.Add( self.regis, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 

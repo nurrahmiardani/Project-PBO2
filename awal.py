@@ -2,6 +2,15 @@ import wx
 import Awalan
 import sqlite3
 
+class halaman(Awalan.halaman_awal):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+    def nextOnButtonClick(self, event):
+        awal = Pilihan (parent=self)
+        awal.Show()
+
+
 class Pilihan(Awalan.pilihan_frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -94,13 +103,17 @@ class Login_Pelanggan(Awalan.login_pelanggan_frame):
         else :
             wx.MessageBox("username dan password belum terdaftar","Silahkan melakukan Registrasi!")
 
+    def registrasiOnButtonClick(self, event):
+        reg = Registrasi_Pelanggan(parent=self)
+        reg.Show()
+
 
 class Registrasi_Pelanggan(Awalan.regis_pelanggan_frame):
     def __init__(self, parent):
         super().__init__(parent)
 
     def regisOnButtonClick(self, event):
-        log = Login_penjahit(parent=self)
+        log = Login_Pelanggan(parent=self)
         log.Show()
         username = self.username_baru.GetValue()
         password = self.pass_baru.GetValue()
@@ -127,6 +140,6 @@ class Beranda_penjahit(Awalan.beranda_penjahit_frame):
 
 
 app = wx.App()
-a = Pilihan(parent=None)
+a = halaman(parent=None)
 a.Show()   
 app.MainLoop()   
