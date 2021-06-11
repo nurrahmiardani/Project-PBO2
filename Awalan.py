@@ -493,6 +493,23 @@ class beranda_penjahit_frame ( wx.Frame ):
 
 		bSizer11 = wx.BoxSizer( wx.VERTICAL )
 
+		self.m_panel17 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer15 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText14 = wx.StaticText( self.m_panel17, wx.ID_ANY, u"SMARTWING", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText14.Wrap( -1 )
+
+		self.m_staticText14.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText14.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+
+		bSizer15.Add( self.m_staticText14, 0, wx.ALIGN_CENTER|wx.ALL, 15 )
+
+
+		self.m_panel17.SetSizer( bSizer15 )
+		self.m_panel17.Layout()
+		bSizer15.Fit( self.m_panel17 )
+		bSizer11.Add( self.m_panel17, 1, wx.EXPAND |wx.ALL, 5 )
+
 		self.m_panel15 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer12 = wx.BoxSizer( wx.VERTICAL )
 
@@ -500,18 +517,18 @@ class beranda_penjahit_frame ( wx.Frame ):
 		self.pilih_kain.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.pilih_kain.SetBackgroundColour( wx.Colour( 176, 176, 176 ) )
 
-		bSizer12.Add( self.pilih_kain, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
+		bSizer12.Add( self.pilih_kain, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
 
 		self.pesanan = wx.Button( self.m_panel15, wx.ID_ANY, u"Pesanan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.pesanan.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
-		bSizer12.Add( self.pesanan, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
+		bSizer12.Add( self.pesanan, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
 
 		self.logout = wx.Button( self.m_panel15, wx.ID_ANY, u"Log out", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.logout.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_MENU ) )
 		self.logout.SetBackgroundColour( wx.Colour( 206, 0, 0 ) )
 
-		bSizer12.Add( self.logout, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
+		bSizer12.Add( self.logout, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
 
 
 		self.m_panel15.SetSizer( bSizer12 )
