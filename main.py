@@ -106,13 +106,13 @@ class Kain(desain.MyFrame1):
             cursor.execute(data, isian)
             conn.commit()
             conn.close()
-            conn = sqlite3.connect('myDB.db')
+            conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
             for baris in range(len(data)):
-                self.m_grid1.DeleteRows(id)
+                self.m_grid1.DeleteRows()
                 for kolom in range (len(data[baris])):
                     self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil dihapus")
