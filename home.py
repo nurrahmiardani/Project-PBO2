@@ -18,7 +18,7 @@ import wx.grid
 class MyFrame1 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 300,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -41,29 +41,29 @@ class MyFrame1 ( wx.Frame ):
 
 		gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.pesanklik = wx.Button( self, wx.ID_ANY, u"Pesan Sekarang", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.pesanklik = wx.Button( self, wx.ID_ANY, u"Pesan Sekarang", wx.Point( 2,2 ), wx.Size( -1,-1 ), 0 )
 		self.pesanklik.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pesanklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gSizer1.Add( self.pesanklik, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.TOP|wx.EXPAND, 5 )
+		gSizer1.Add( self.pesanklik, 0, wx.EXPAND|wx.ALL, 5 )
 
-		self.cekklik = wx.Button( self, wx.ID_ANY, u"Cek Barang", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.cekklik = wx.Button( self, wx.ID_ANY, u"Cek Barang", wx.DefaultPosition, wx.Size( 1,1 ), 0 )
 		self.cekklik.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.cekklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gSizer1.Add( self.cekklik, 1, wx.ALL|wx.EXPAND, 5 )
+		gSizer1.Add( self.cekklik, 0, wx.ALL|wx.EXPAND, 5 )
 
-		self.kainklik = wx.Button( self, wx.ID_ANY, u"Lihat Daftar Kain", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.kainklik = wx.Button( self, wx.ID_ANY, u"Lihat Daftar Kain", wx.Point( 2,2 ), wx.Size( -1,-1 ), 0 )
 		self.kainklik.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.kainklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gSizer1.Add( self.kainklik, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
+		gSizer1.Add( self.kainklik, 0, wx.ALL|wx.EXPAND, 5 )
 
-		self.logoutklik = wx.Button( self, wx.ID_ANY, u"LogOut", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.logoutklik = wx.Button( self, wx.ID_ANY, u"LogOut", wx.DefaultPosition, wx.Size( 1,1 ), 0 )
 		self.logoutklik.SetFont( wx.Font( 11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.logoutklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
-		gSizer1.Add( self.logoutklik, 0, wx.ALL|wx.EXPAND, 5 )
+		gSizer1.Add( self.logoutklik, 1, wx.ALL|wx.EXPAND, 5 )
 
 
 		bSizer1.Add( gSizer1, 1, wx.EXPAND, 5 )
@@ -105,7 +105,7 @@ class MyFrame1 ( wx.Frame ):
 class MyFrame2 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 300,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -128,13 +128,13 @@ class MyFrame2 ( wx.Frame ):
 
 		bSizer3 = wx.BoxSizer( wx.VERTICAL )
 
-		self.bajuklik = wx.Button( self, wx.ID_ANY, u"Baju", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.bajuklik = wx.Button( self, wx.ID_ANY, u"Baju", wx.DefaultPosition, wx.Size( 400,-1 ), 0 )
 		self.bajuklik.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.bajuklik.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 
-		bSizer3.Add( self.bajuklik, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		bSizer3.Add( self.bajuklik, 1, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.celanaklik = wx.Button( self, wx.ID_ANY, u"Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.celanaklik = wx.Button( self, wx.ID_ANY, u"Celana", wx.DefaultPosition, wx.Size( 400,-1 ), 0 )
 		self.celanaklik.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.celanaklik.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 
@@ -195,7 +195,7 @@ class MyFrame3 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText19, 0, wx.ALL, 5 )
 
-		self.isinama = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isinama = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isinama, 0, wx.ALL, 5 )
 
 		self.m_staticText7 = wx.StaticText( self, wx.ID_ANY, u"Jenis Kain", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -205,7 +205,7 @@ class MyFrame3 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText7, 0, wx.ALL, 5 )
 
-		self.isikain = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isikain = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isikain, 0, wx.ALL, 5 )
 
 		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Warna", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -215,7 +215,7 @@ class MyFrame3 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText8, 0, wx.ALL, 5 )
 
-		self.isiwarna = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isiwarna = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isiwarna, 0, wx.ALL, 5 )
 
 		self.m_staticText9 = wx.StaticText( self, wx.ID_ANY, u"Lebar Dada", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -225,7 +225,7 @@ class MyFrame3 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText9, 0, wx.ALL, 5 )
 
-		self.isilebar = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isilebar = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isilebar, 0, wx.ALL, 5 )
 
 		self.m_staticText11 = wx.StaticText( self, wx.ID_ANY, u"Panjang Baju", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -235,14 +235,14 @@ class MyFrame3 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText11, 0, wx.ALL, 5 )
 
-		self.isipanjang = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isipanjang = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isipanjang, 0, wx.ALL, 5 )
 
 
 		bSizer4.Add( gSizer2, 1, wx.EXPAND, 5 )
 
-		self.pesanklik = wx.Button( self, wx.ID_ANY, u"Pesan", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.pesanklik.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+		self.pesanklik = wx.Button( self, wx.ID_ANY, u"Pesan", wx.DefaultPosition, wx.Size( -1,25 ), 0 )
+		self.pesanklik.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pesanklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
 		bSizer4.Add( self.pesanklik, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -295,7 +295,7 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText7, 0, wx.ALL, 5 )
 
-		self.isinamaa = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isinamaa = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isinamaa, 0, wx.ALL, 5 )
 
 		self.m_staticText21 = wx.StaticText( self, wx.ID_ANY, u"Jenis Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -305,7 +305,7 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText21, 0, wx.ALL, 5 )
 
-		self.isijeniscelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isijeniscelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isijeniscelana, 0, wx.ALL, 5 )
 
 		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Warna", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -315,7 +315,7 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText8, 0, wx.ALL, 5 )
 
-		self.isiwarnacelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isiwarnacelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isiwarnacelana, 0, wx.ALL, 5 )
 
 		self.m_staticText9 = wx.StaticText( self, wx.ID_ANY, u"Lingkar Pinggang", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -325,7 +325,7 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText9, 0, wx.ALL, 5 )
 
-		self.isilingkar = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isilingkar = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isilingkar, 0, wx.ALL, 5 )
 
 		self.m_staticText11 = wx.StaticText( self, wx.ID_ANY, u"Panjang Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -335,14 +335,14 @@ class MyFrame4 ( wx.Frame ):
 
 		gSizer2.Add( self.m_staticText11, 0, wx.ALL, 5 )
 
-		self.isipanjangcelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.isipanjangcelana = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
 		gSizer2.Add( self.isipanjangcelana, 0, wx.ALL, 5 )
 
 
 		bSizer4.Add( gSizer2, 1, wx.EXPAND, 5 )
 
 		self.pesancelanaklik = wx.Button( self, wx.ID_ANY, u"Pesan", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.pesancelanaklik.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+		self.pesancelanaklik.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pesancelanaklik.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
 
 		bSizer4.Add( self.pesancelanaklik, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -441,7 +441,7 @@ class MyFrame9 ( wx.Frame ):
 class MyFrame7 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 554,345 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 700,500 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -500,6 +500,8 @@ class MyFrame7 ( wx.Frame ):
 
 		# Cell Defaults
 		self.tabelcari.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.tabelcari.SetBackgroundColour( wx.Colour( 15, 15, 15 ) )
+
 		bSizer8.Add( self.tabelcari, 0, wx.ALL, 5 )
 
 		self.m_staticText20 = wx.StaticText( self, wx.ID_ANY, u"Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -539,6 +541,8 @@ class MyFrame7 ( wx.Frame ):
 
 		# Cell Defaults
 		self.tabelcelana.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.tabelcelana.SetBackgroundColour( wx.Colour( 15, 15, 15 ) )
+
 		bSizer8.Add( self.tabelcelana, 0, wx.ALL, 5 )
 
 

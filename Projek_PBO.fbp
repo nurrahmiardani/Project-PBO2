@@ -147,7 +147,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg">230,230,0</property>
                                     <property name="floatable">1</property>
-                                    <property name="font">Comic Sans MS,90,90,14,73,0</property>
+                                    <property name="font">Comic Sans MS,90,90,20,73,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -208,7 +208,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg">221,221,0</property>
                                     <property name="floatable">1</property>
-                                    <property name="font">Comic Sans MS,90,90,14,73,0</property>
+                                    <property name="font">Comic Sans MS,90,90,18,73,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -269,7 +269,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg">235,122,20</property>
                                     <property name="floatable">1</property>
-                                    <property name="font">Comic Sans MS,90,90,14,73,0</property>
+                                    <property name="font">Comic Sans MS,90,90,16,73,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -335,7 +335,7 @@
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,14,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -360,7 +360,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">150,35</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -500,7 +500,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font">Comic Sans MS,90,90,16,73,0</property>
+                                    <property name="font">Comic Sans MS,90,90,20,73,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -561,7 +561,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font">Comic Sans MS,90,90,16,73,0</property>
+                                    <property name="font">Comic Sans MS,90,90,18,73,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -693,7 +693,7 @@
                                     <property name="fg">wxSYS_COLOUR_INFOTEXT</property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,16,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -718,7 +718,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">200,-1</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -766,7 +766,7 @@
                                     <property name="fg">wxSYS_COLOUR_INFOTEXT</property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,16,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -791,7 +791,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">200,-1</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -991,7 +991,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,14,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1116,7 +1116,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,14,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1309,7 +1309,7 @@
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,12,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1334,7 +1334,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">165,-1</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -1382,7 +1382,7 @@
                                     <property name="fg">wxSYS_COLOUR_WINDOW</property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,12,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1407,7 +1407,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">165,-1</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -1607,7 +1607,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,14,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1732,7 +1732,7 @@
                                     <property name="enabled">1</property>
                                     <property name="fg"></property>
                                     <property name="floatable">1</property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,14,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1922,10 +1922,10 @@
                                     <property name="dock_fixed">0</property>
                                     <property name="docking">Left</property>
                                     <property name="enabled">1</property>
-                                    <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
+                                    <property name="fg">wxSYS_COLOUR_INFOBK</property>
                                     <property name="floatable">1</property>
                                     <property name="focus"></property>
-                                    <property name="font"></property>
+                                    <property name="font">Arial,90,90,12,74,0</property>
                                     <property name="gripper">0</property>
                                     <property name="hidden">0</property>
                                     <property name="id">wxID_ANY</property>
@@ -1950,7 +1950,7 @@
                                     <property name="pressed"></property>
                                     <property name="resize">Resizable</property>
                                     <property name="show">1</property>
-                                    <property name="size"></property>
+                                    <property name="size">130,-1</property>
                                     <property name="style"></property>
                                     <property name="subclass">; ; forward_declare</property>
                                     <property name="toolbar_pane">0</property>
@@ -3415,6 +3415,7 @@
                                     <property name="window_extra_style"></property>
                                     <property name="window_name"></property>
                                     <property name="window_style"></property>
+                                    <event name="OnButtonClick">btn_pilihkan</event>
                                 </object>
                             </object>
                             <object class="sizeritem" expanded="1">
@@ -3487,6 +3488,7 @@
                                     <property name="window_extra_style"></property>
                                     <property name="window_name"></property>
                                     <property name="window_style"></property>
+                                    <event name="OnButtonClick">btn_pesanan</event>
                                 </object>
                             </object>
                             <object class="sizeritem" expanded="1">
@@ -3559,6 +3561,7 @@
                                     <property name="window_extra_style"></property>
                                     <property name="window_name"></property>
                                     <property name="window_style"></property>
+                                    <event name="OnButtonClick">btn_keluar</event>
                                 </object>
                             </object>
                         </object>
