@@ -76,16 +76,23 @@ class Login_Pelanggan(Awalan.login_pelanggan_frame):
         super().__init__(parent)
 
     def loginOnButtonClick(self,event):
-        self.usernm = self.isi_user.GetValue()
-        self.psw = self.isi_psw.GetValue()
-        login = Beranda_Pelanggan(parent=self)
-        login.Show()
-
-    def registrasiOnButtonClick(self, event):
-        self.usernm = self.isi_user.GetValue()
-        self.psw = self.isi_psw.GetValue()
-        reg = Registrasi_Pelanggan(parent=self)
-        reg.Show()
+        username = self.isi_user_penjahit.GetValue()
+        password = self.isi_psw_penjahit.GetValue()
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        cek_akun = ("SELECT * FROM akun_pelanggan WHERE username = ? AND password = ?")
+        cursor.execute(cek_akun,(username,password))
+        results = cursor.fetchall()
+        if results :
+            for i in results :
+                wx.MessageBox("Berhasil Login")
+                login = Beranda_penjahit(parent=self)
+                login.Show()
+                # if(wx.OK):
+                #     self.Destroy()
+                    
+        else :
+            wx.MessageBox("username dan password belum terdaftar","Silahkan melakukan Registrasi!")
 
 
 class Registrasi_Pelanggan(Awalan.regis_pelanggan_frame):
@@ -93,8 +100,23 @@ class Registrasi_Pelanggan(Awalan.regis_pelanggan_frame):
         super().__init__(parent)
 
     def regisOnButtonClick(self, event):
-        log = Login_Pelanggan(parent=self)
+        log = Login_penjahit(parent=self)
         log.Show()
+        username = self.username_baru.GetValue()
+        password = self.pass_baru.GetValue()
+        if username == "" :
+            wx.MessageBox("Username harus terisi!")
+        elif password == "" :
+            wx.MessageBox("Password harus terisi!")
+        else :
+            conn = sqlite3.connect('pesananbaju.db')
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO akun_pelanggan(username,password) VALUES(?,?)",(username,password))
+            conn.commit()
+            conn.close()
+            wx.MessageBox("Data BERHASIL disimpan")
+            if(wx.OK):
+                self.Destroy()
     
 
 class Beranda_penjahit(Awalan.beranda_penjahit_frame):

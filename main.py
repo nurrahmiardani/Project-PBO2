@@ -24,7 +24,7 @@ class Kain(desain.MyFrame1):
             self.inputWarna.SetValue("") 
             self.inputHarga.SetValue("") 
             self.inputStok.SetValue("") 
-            # conn = sqlite3.connect('myDB.db') 
+            # conn = sqlite3.connect('pesananbaju.db') 
             # cursor = conn.cursor()
             # data = cursor.execute("SELECT * FROM kain").fetchall()
             # conn.close()
@@ -33,7 +33,7 @@ class Kain(desain.MyFrame1):
             #     for kolom in range (len(data[baris])):
             #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
         else :
-            conn = sqlite3.connect('myDB.db') 
+            conn = sqlite3.connect('pesananbaju.db') 
             cursor = conn.cursor()
             # for baris in range(len(data)):
             #     self.m_grid1.AppendRows()
@@ -69,7 +69,7 @@ class Kain(desain.MyFrame1):
             self.inputStok.SetValue("") 
 
         else : 
-            conn = sqlite3.connect('myDB.db')
+            conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
             # self.data = "update kain set jenis = ?,warna = ?, harga = ?, stok = ? where ID = ? "
             # self.isian = (self.jenis, self.warna, self.harga, self.stok, self.ID)
@@ -99,7 +99,7 @@ class Kain(desain.MyFrame1):
             # self.inputWarna.SetValue("") 
             # self.inputHarga.SetValue("") 
             # self.inputStok.SetValue("")
-            conn = sqlite3.connect('myDB.db')
+            conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
             data = "DELETE from kain where ID=?"
             isian = (id)
