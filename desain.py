@@ -145,43 +145,43 @@ class MyFrame1 ( wx.Frame ):
 		self.m_panel6 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer6 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_grid1 = wx.grid.Grid( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.tabelkain = wx.grid.Grid( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid1.CreateGrid( 5, 5 )
-		self.m_grid1.EnableEditing( True )
-		self.m_grid1.EnableGridLines( True )
-		self.m_grid1.EnableDragGridSize( False )
-		self.m_grid1.SetMargins( 0, 0 )
+		self.tabelkain.CreateGrid( 5, 5 )
+		self.tabelkain.EnableEditing( True )
+		self.tabelkain.EnableGridLines( True )
+		self.tabelkain.EnableDragGridSize( False )
+		self.tabelkain.SetMargins( 0, 0 )
 
 		# Columns
-		self.m_grid1.EnableDragColMove( False )
-		self.m_grid1.EnableDragColSize( True )
-		self.m_grid1.SetColLabelSize( 30 )
-		self.m_grid1.SetColLabelValue( 0, u"ID" )
-		self.m_grid1.SetColLabelValue( 1, u"Jenis" )
-		self.m_grid1.SetColLabelValue( 2, u"Warna" )
-		self.m_grid1.SetColLabelValue( 3, u"Harga" )
-		self.m_grid1.SetColLabelValue( 4, u"Stok" )
-		self.m_grid1.SetColLabelValue( 5, u"warna" )
-		self.m_grid1.SetColLabelValue( 6, u"warna" )
-		self.m_grid1.SetColLabelValue( 7, u"warna" )
-		self.m_grid1.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.tabelkain.EnableDragColMove( False )
+		self.tabelkain.EnableDragColSize( True )
+		self.tabelkain.SetColLabelSize( 30 )
+		self.tabelkain.SetColLabelValue( 0, u"ID" )
+		self.tabelkain.SetColLabelValue( 1, u"Jenis" )
+		self.tabelkain.SetColLabelValue( 2, u"Warna" )
+		self.tabelkain.SetColLabelValue( 3, u"Harga" )
+		self.tabelkain.SetColLabelValue( 4, u"Stok" )
+		self.tabelkain.SetColLabelValue( 5, u"warna" )
+		self.tabelkain.SetColLabelValue( 6, u"warna" )
+		self.tabelkain.SetColLabelValue( 7, u"warna" )
+		self.tabelkain.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.m_grid1.EnableDragRowSize( True )
-		self.m_grid1.SetRowLabelSize( 80 )
-		self.m_grid1.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.tabelkain.EnableDragRowSize( True )
+		self.tabelkain.SetRowLabelSize( 80 )
+		self.tabelkain.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
-		self.m_grid1.SetLabelBackgroundColour( wx.Colour( 80, 80, 80 ) )
-		self.m_grid1.SetLabelTextColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.tabelkain.SetLabelBackgroundColour( wx.Colour( 80, 80, 80 ) )
+		self.tabelkain.SetLabelTextColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		# Cell Defaults
-		self.m_grid1.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		self.m_grid1.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
+		self.tabelkain.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.tabelkain.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
-		bSizer6.Add( self.m_grid1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		bSizer6.Add( self.tabelkain, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
 		self.m_panel6.SetSizer( bSizer6 )

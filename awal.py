@@ -1,3 +1,4 @@
+from os import name
 import wx
 import Awalan
 import home
@@ -119,9 +120,110 @@ class Beranda_penjahit(Awalan.beranda_penjahit_frame):
     def btn_pilihkan( self, event ):
         pil = Kain(parent=self)
         pil.Show()
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = cursor.execute("SELECT * FROM kain").fetchall()
+        conn.close()
+        for baris in range (len(data)):
+            self.tabelkain.AppendRows()
+            for kolom in range(len(data[baris])) :
+                self.tabelkain.SetCellValue(baris, kolom, str(data[baris][kolom]))
+
+
+        # conn = sqlite3.connect('pesananbaju.db')
+        # cursor = conn.cursor()
+        # data = cursor.execute("select * from kain").fetchall()
+        # conn.close()
+        # for baris in range(len(data)):
+        #     self..AppendRows()
+        #     for kolom in range (len(data[baris])) :
+        #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+
 
     def btn_pesanan(self, event):
-        pil1 = 
+        pil1 = pesanan(parent=self)
+        pil1.Show()
+
+class pesanan (Awalan.pesanan_frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+    def bajuOnButtonClick ( self, event ):
+        baju = Baju(parent=self)
+        baju.Show()
+
+    def celanaOnButtonClick ( self, event ):
+        cln = Celana(parent=self)
+        cln.Show()
+
+
+class Baju (Awalan.baju_frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = cursor.execute("select * from baju").fetchall()
+        conn.close()
+        for baris in range(len(data)):
+            self.status_baju.AppendRows()
+            for kolom in range (len(data[baris])) :
+                self.status_baju.SetCellValue(baris, kolom, str(data[baris][kolom]))
+
+    def editOnButtonClick ( self, event ):
+        nama = self.isi_nama.GetValue()
+        status = self.isi_status.GetValue()
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = "UPDATE baju SET status = ? where nama =?"
+        isian = (status,nama)
+        cursor.execute(data,isian)
+        data = cursor.execute("SELECT * FROM baju").fetchall()
+        conn.commit()
+        conn.close()
+        for baris in range(len(data)):
+            self.status_baju.AppendRows()
+            for kolom in range (len(data[baris])):
+                self.status_baju.SetCellValue(baris, kolom, str(data[baris][kolom]))
+        print("Data berhasil diupdate")
+        wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
+
+    def kembaliOnButtonClick ( self, event ):
+        pil = Beranda_penjahit(parent=self)
+        pil.Show()
+
+class Celana (Awalan.celana_frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = cursor.execute("select * from celana").fetchall()
+        conn.close()
+        for baris in range(len(data)):
+            self.status_celana.AppendRows()
+            for kolom in range (len(data[baris])) :
+                self.status_celana.SetCellValue(baris, kolom, str(data[baris][kolom]))
+
+    def editOnButtonClick ( self, event ):
+        nama = self.isi_nama.GetValue()
+        status = self.isi_status.GetValue()
+        conn = sqlite3.connect('pesananbaju.db')
+        cursor = conn.cursor()
+        data = "UPDATE celana SET status = ? where nama =?"
+        isian = (status,nama)
+        cursor.execute(data,isian)
+        data = cursor.execute("SELECT * FROM celana").fetchall()
+        conn.commit()
+        conn.close()
+        for baris in range(len(data)):
+            self.status_celana.AppendRows()
+            for kolom in range (len(data[baris])):
+                self.status_celana.SetCellValue(baris, kolom, str(data[baris][kolom]))
+        print("Data berhasil diupdate")
+        wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
+    
+    def kembaliOnButtonClick ( self, event ):
+        pil = Beranda_penjahit(parent=self)
+        pil.Show()
         
 
 class frame (home.MyFrame1):
@@ -363,7 +465,6 @@ class Kain(desain.MyFrame1):
         else : 
             print("Data gagal ")
             wx.MessageBox ("Data gagal dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
-
 
 
 

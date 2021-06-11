@@ -9,6 +9,7 @@
 
 import wx
 import wx.xrc
+import wx.grid
 
 ###########################################################################
 ## Class halaman_awal
@@ -568,6 +569,8 @@ class beranda_penjahit_frame ( wx.Frame ):
 	def __del__( self ):
 		pass
 
+
+	# Virtual event handlers, overide them in your derived class
 	def btn_pilihkan( self, event ):
 		event.Skip()
 
@@ -575,6 +578,405 @@ class beranda_penjahit_frame ( wx.Frame ):
 		event.Skip()
 
 	def btn_keluar( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class pesanan_frame
+###########################################################################
+
+class pesanan_frame ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 424,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
+
+		bSizer21 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel29 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer22 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText22 = wx.StaticText( self.m_panel29, wx.ID_ANY, u"Jenis Pesanan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText22.Wrap( -1 )
+
+		self.m_staticText22.SetFont( wx.Font( 16, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer22.Add( self.m_staticText22, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 20 )
+
+
+		self.m_panel29.SetSizer( bSizer22 )
+		self.m_panel29.Layout()
+		bSizer22.Fit( self.m_panel29 )
+		bSizer21.Add( self.m_panel29, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel26 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		gSizer8 = wx.GridSizer( 0, 2, 0, 0 )
+
+		self.baju = wx.Button( self.m_panel26, wx.ID_ANY, u"Baju", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.baju.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INACTIVECAPTION ) )
+
+		gSizer8.Add( self.baju, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
+
+		self.celana = wx.Button( self.m_panel26, wx.ID_ANY, u"Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer8.Add( self.celana, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
+
+
+		self.m_panel26.SetSizer( gSizer8 )
+		self.m_panel26.Layout()
+		gSizer8.Fit( self.m_panel26 )
+		bSizer21.Add( self.m_panel26, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer21 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.baju.Bind( wx.EVT_BUTTON, self.bajuOnButtonClick )
+		self.celana.Bind( wx.EVT_BUTTON, self.celanaOnButtonClick )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def bajuOnButtonClick( self, event ):
+		event.Skip()
+
+	def celanaOnButtonClick( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class baju_frame
+###########################################################################
+
+class baju_frame ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 744,581 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
+
+		bSizer16 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel18 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer17 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText15 = wx.StaticText( self.m_panel18, wx.ID_ANY, u"PESANAN BAJU", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText15.Wrap( -1 )
+
+		self.m_staticText15.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText15.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
+		bSizer17.Add( self.m_staticText15, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
+
+
+		self.m_panel18.SetSizer( bSizer17 )
+		self.m_panel18.Layout()
+		bSizer17.Fit( self.m_panel18 )
+		bSizer16.Add( self.m_panel18, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel19 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		gSizer6 = wx.GridSizer( 0, 2, 0, 0 )
+
+		self.m_panel22 = wx.Panel( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer19 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel24 = wx.Panel( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer19.Add( self.m_panel24, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_staticText20 = wx.StaticText( self.m_panel22, wx.ID_ANY, u"Nama :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText20.Wrap( -1 )
+
+		self.m_staticText20.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer19.Add( self.m_staticText20, 1, wx.ALIGN_RIGHT|wx.ALL, 5 )
+
+		self.m_staticText21 = wx.StaticText( self.m_panel22, wx.ID_ANY, u"Status :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText21.Wrap( -1 )
+
+		self.m_staticText21.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer19.Add( self.m_staticText21, 1, wx.ALIGN_RIGHT|wx.ALL, 5 )
+
+
+		self.m_panel22.SetSizer( bSizer19 )
+		self.m_panel22.Layout()
+		bSizer19.Fit( self.m_panel22 )
+		gSizer6.Add( self.m_panel22, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel23 = wx.Panel( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer20 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel25 = wx.Panel( self.m_panel23, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer20.Add( self.m_panel25, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.isi_nama = wx.TextCtrl( self.m_panel23, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer20.Add( self.isi_nama, 1, wx.ALL, 5 )
+
+		self.isi_status = wx.TextCtrl( self.m_panel23, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer20.Add( self.isi_status, 0, wx.ALL, 5 )
+
+
+		self.m_panel23.SetSizer( bSizer20 )
+		self.m_panel23.Layout()
+		bSizer20.Fit( self.m_panel23 )
+		gSizer6.Add( self.m_panel23, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.m_panel19.SetSizer( gSizer6 )
+		self.m_panel19.Layout()
+		gSizer6.Fit( self.m_panel19 )
+		bSizer16.Add( self.m_panel19, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel20 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer18 = wx.BoxSizer( wx.VERTICAL )
+
+		self.edit = wx.Button( self.m_panel20, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.edit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.edit.SetBackgroundColour( wx.Colour( 255, 128, 64 ) )
+
+		bSizer18.Add( self.edit, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+		self.kembali = wx.Button( self.m_panel20, wx.ID_ANY, u"Kembali", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer18.Add( self.kembali, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		self.m_panel20.SetSizer( bSizer18 )
+		self.m_panel20.Layout()
+		bSizer18.Fit( self.m_panel20 )
+		bSizer16.Add( self.m_panel20, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel21 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer16.Add( self.m_panel21, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.status_baju = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.status_baju.CreateGrid( 5, 6 )
+		self.status_baju.EnableEditing( True )
+		self.status_baju.EnableGridLines( True )
+		self.status_baju.EnableDragGridSize( False )
+		self.status_baju.SetMargins( 0, 0 )
+
+		# Columns
+		self.status_baju.SetColSize( 0, 78 )
+		self.status_baju.SetColSize( 1, 80 )
+		self.status_baju.SetColSize( 2, 119 )
+		self.status_baju.SetColSize( 3, 80 )
+		self.status_baju.SetColSize( 4, 80 )
+		self.status_baju.SetColSize( 5, 129 )
+		self.status_baju.EnableDragColMove( False )
+		self.status_baju.EnableDragColSize( True )
+		self.status_baju.SetColLabelSize( 30 )
+		self.status_baju.SetColLabelValue( 0, u"Jenis" )
+		self.status_baju.SetColLabelValue( 1, u"Warna" )
+		self.status_baju.SetColLabelValue( 2, u"Lingkar Dada" )
+		self.status_baju.SetColLabelValue( 3, u"Panjang Baju" )
+		self.status_baju.SetColLabelValue( 4, u"Nama" )
+		self.status_baju.SetColLabelValue( 5, u"Status" )
+		self.status_baju.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.status_baju.EnableDragRowSize( True )
+		self.status_baju.SetRowLabelSize( 80 )
+		self.status_baju.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.status_baju.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer16.Add( self.status_baju, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer16 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.edit.Bind( wx.EVT_BUTTON, self.editOnButtonClick )
+		self.kembali.Bind( wx.EVT_BUTTON, self.kembaliOnButtonClick )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def editOnButtonClick( self, event ):
+		event.Skip()
+
+	def kembaliOnButtonClick( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class celana_frame
+###########################################################################
+
+class celana_frame ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 744,581 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
+
+		bSizer16 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel18 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer17 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText15 = wx.StaticText( self.m_panel18, wx.ID_ANY, u"PESANAN CELANA", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText15.Wrap( -1 )
+
+		self.m_staticText15.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText15.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
+		bSizer17.Add( self.m_staticText15, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
+
+
+		self.m_panel18.SetSizer( bSizer17 )
+		self.m_panel18.Layout()
+		bSizer17.Fit( self.m_panel18 )
+		bSizer16.Add( self.m_panel18, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel19 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		gSizer6 = wx.GridSizer( 0, 2, 0, 0 )
+
+		self.m_panel22 = wx.Panel( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer19 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel24 = wx.Panel( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer19.Add( self.m_panel24, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_staticText20 = wx.StaticText( self.m_panel22, wx.ID_ANY, u"Nama :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText20.Wrap( -1 )
+
+		self.m_staticText20.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer19.Add( self.m_staticText20, 1, wx.ALIGN_RIGHT|wx.ALL, 5 )
+
+		self.m_staticText21 = wx.StaticText( self.m_panel22, wx.ID_ANY, u"Status :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText21.Wrap( -1 )
+
+		self.m_staticText21.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer19.Add( self.m_staticText21, 1, wx.ALIGN_RIGHT|wx.ALL, 5 )
+
+
+		self.m_panel22.SetSizer( bSizer19 )
+		self.m_panel22.Layout()
+		bSizer19.Fit( self.m_panel22 )
+		gSizer6.Add( self.m_panel22, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel23 = wx.Panel( self.m_panel19, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer20 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel25 = wx.Panel( self.m_panel23, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer20.Add( self.m_panel25, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.isi_nama = wx.TextCtrl( self.m_panel23, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer20.Add( self.isi_nama, 1, wx.ALL, 5 )
+
+		self.isi_status = wx.TextCtrl( self.m_panel23, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer20.Add( self.isi_status, 0, wx.ALL, 5 )
+
+
+		self.m_panel23.SetSizer( bSizer20 )
+		self.m_panel23.Layout()
+		bSizer20.Fit( self.m_panel23 )
+		gSizer6.Add( self.m_panel23, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.m_panel19.SetSizer( gSizer6 )
+		self.m_panel19.Layout()
+		gSizer6.Fit( self.m_panel19 )
+		bSizer16.Add( self.m_panel19, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel20 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer18 = wx.BoxSizer( wx.VERTICAL )
+
+		self.edit = wx.Button( self.m_panel20, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.edit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.edit.SetBackgroundColour( wx.Colour( 255, 128, 64 ) )
+
+		bSizer18.Add( self.edit, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+		self.kembali = wx.Button( self.m_panel20, wx.ID_ANY, u"Kembali", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer18.Add( self.kembali, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		self.m_panel20.SetSizer( bSizer18 )
+		self.m_panel20.Layout()
+		bSizer18.Fit( self.m_panel20 )
+		bSizer16.Add( self.m_panel20, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.m_panel21 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer16.Add( self.m_panel21, 1, wx.EXPAND |wx.ALL, 5 )
+
+		self.status_celana = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.status_celana.CreateGrid( 5, 6 )
+		self.status_celana.EnableEditing( True )
+		self.status_celana.EnableGridLines( True )
+		self.status_celana.EnableDragGridSize( False )
+		self.status_celana.SetMargins( 0, 0 )
+
+		# Columns
+		self.status_celana.SetColSize( 0, 78 )
+		self.status_celana.SetColSize( 1, 80 )
+		self.status_celana.SetColSize( 2, 119 )
+		self.status_celana.SetColSize( 3, 80 )
+		self.status_celana.SetColSize( 4, 80 )
+		self.status_celana.SetColSize( 5, 129 )
+		self.status_celana.EnableDragColMove( False )
+		self.status_celana.EnableDragColSize( True )
+		self.status_celana.SetColLabelSize( 30 )
+		self.status_celana.SetColLabelValue( 0, u"Jenis" )
+		self.status_celana.SetColLabelValue( 1, u"Warna" )
+		self.status_celana.SetColLabelValue( 2, u"Lingkar Pinggang" )
+		self.status_celana.SetColLabelValue( 3, u"Panjang Celana" )
+		self.status_celana.SetColLabelValue( 4, u"Nama" )
+		self.status_celana.SetColLabelValue( 5, u"Status" )
+		self.status_celana.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.status_celana.EnableDragRowSize( True )
+		self.status_celana.SetRowLabelSize( 80 )
+		self.status_celana.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.status_celana.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer16.Add( self.status_celana, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer16 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.edit.Bind( wx.EVT_BUTTON, self.editOnButtonClick )
+		self.kembali.Bind( wx.EVT_BUTTON, self.kembaliOnButtonClick )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def editOnButtonClick( self, event ):
+		event.Skip()
+
+	def kembaliOnButtonClick( self, event ):
 		event.Skip()
 
 
