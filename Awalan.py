@@ -486,7 +486,7 @@ class regis_pelanggan_frame ( wx.Frame ):
 class beranda_penjahit_frame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,384 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -514,21 +514,24 @@ class beranda_penjahit_frame ( wx.Frame ):
 		bSizer12 = wx.BoxSizer( wx.VERTICAL )
 
 		self.pilih_kain = wx.Button( self.m_panel15, wx.ID_ANY, u"Pilihan Kain", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.pilih_kain.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pilih_kain.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.pilih_kain.SetBackgroundColour( wx.Colour( 176, 176, 176 ) )
 
-		bSizer12.Add( self.pilih_kain, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
+		bSizer12.Add( self.pilih_kain, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
 
 		self.pesanan = wx.Button( self.m_panel15, wx.ID_ANY, u"Pesanan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.pesanan.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pesanan.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
-		bSizer12.Add( self.pesanan, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
+		bSizer12.Add( self.pesanan, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
 
 		self.logout = wx.Button( self.m_panel15, wx.ID_ANY, u"Log out", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.logout.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.logout.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_MENU ) )
 		self.logout.SetBackgroundColour( wx.Colour( 206, 0, 0 ) )
 
-		bSizer12.Add( self.logout, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 7 )
+		bSizer12.Add( self.logout, 0, wx.ALIGN_CENTER|wx.ALL|wx.SHAPED, 10 )
 
 
 		self.m_panel15.SetSizer( bSizer12 )
