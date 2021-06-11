@@ -546,14 +546,20 @@ class beranda_penjahit_frame ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.pilih_kain.Bind( wx.EVT_BUTTON, self.btn_pilihKain )
+		self.pilih_kain.Bind( wx.EVT_BUTTON, self.btn_pilihkan )
+		self.pesanan.Bind( wx.EVT_BUTTON, self.btn_pesanan )
+		self.logout.Bind( wx.EVT_BUTTON, self.btn_keluar )
 
 	def __del__( self ):
 		pass
 
+	def btn_pilihkan( self, event ):
+		event.Skip()
 
-	# Virtual event handlers, overide them in your derived class
-	def btn_pilihKain( self, event ):
+	def btn_pesanan( self, event ):
+		event.Skip()
+
+	def btn_keluar( self, event ):
 		event.Skip()
 
 
