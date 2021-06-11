@@ -46,7 +46,6 @@ class Login_penjahit(Awalan.login_penjahit_frame):
                 login.Show()
                 # if(wx.OK):
                 #     self.Destroy()
-               
         
                     
         else :
@@ -116,6 +115,11 @@ class Login_Pelanggan(Awalan.login_pelanggan_frame):
 class Beranda_penjahit(Awalan.beranda_penjahit_frame):
     def __init__(self, parent):
         super().__init__(parent)
+    
+    def btn_pilihKain( self, event ):
+        pil = Kain(parent=self)
+        pil.Show()
+        
 
 class frame (home.MyFrame1):
     def __init__(self,parent):

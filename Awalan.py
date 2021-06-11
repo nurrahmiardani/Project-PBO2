@@ -568,8 +568,6 @@ class beranda_penjahit_frame ( wx.Frame ):
 	def __del__( self ):
 		pass
 
-
-	# Virtual event handlers, overide them in your derived class
 	def btn_pilihkan( self, event ):
 		event.Skip()
 
