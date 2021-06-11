@@ -49,6 +49,11 @@ class Kain(desain.MyFrame1):
                     self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil disimpan")
             wx.MessageBox ("Data berhasil disimpan", "Information", wx.OK | wx.ICON_INFORMATION)
+            self.inputID.SetValue("")
+            self.inputJenis.SetValue("")
+            self.inputWarna.SetValue("") 
+            self.inputHarga.SetValue("") 
+            self.inputStok.SetValue("")
 
     def edit( self, event ):
         id = self.inputID.GetValue()
@@ -66,7 +71,7 @@ class Kain(desain.MyFrame1):
             self.inputJenis.SetValue("")
             self.inputWarna.SetValue("") 
             self.inputHarga.SetValue("") 
-            self.inputStok.SetValue("") 
+            self.inputStok.SetValue("")
 
         else : 
             conn = sqlite3.connect('pesananbaju.db')
@@ -86,19 +91,13 @@ class Kain(desain.MyFrame1):
             print("Data berhasil diupdate")
             wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
 
+
     def delete( self, event ):
         id = self.inputID.GetValue()
-        # jenis = self.inputJenis.GetValue()
-        # warna = self.inputWarna.GetValue()
-        # harga = self.inputHarga.GetValue()
-        # stok = self.inputStok.GetValue()
 
         if (wx.OK):
             self.inputID.SetValue("")
-            # self.inputJenis.SetValue("")
-            # self.inputWarna.SetValue("") 
-            # self.inputHarga.SetValue("") 
-            # self.inputStok.SetValue("")
+
             conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
             data = "DELETE from kain where ID=?"
@@ -111,12 +110,23 @@ class Kain(desain.MyFrame1):
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
-            for baris in range(len(data)):
-                self.m_grid1.DeleteRows()
-                for kolom in range (len(data[baris])):
-                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+            # for baris in range(len(data)):
+            #     self.m_grid1.DeleteRows(data)
+            #     for kolom in range (len(data[baris])):
+            #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+            datas = [self.id, self.jenis,self.warna,self.harga,self.stok]
+            for i,items in enumerate(self.items):
+            # print(datas[0],items[0])
+            # if datas[0] == items[0]:
+                selected = i
+                break
+        try:
+            self.items.pop(selected)
+            self.m_grid1.DeleteRows(pos=selected)
+            temp.delete(datas[0])
             print("Data berhasil dihapus")
             wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
+
 
         else : 
             print("Data gagal ")
