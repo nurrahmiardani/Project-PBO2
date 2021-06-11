@@ -41,33 +41,40 @@ class MyFrame1 ( wx.Frame ):
 		self.m_panel8 = wx.Panel( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer9 = wx.BoxSizer( wx.VERTICAL )
 
+		self.m_staticText6 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"ID", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText6.Wrap( -1 )
+
+		self.m_staticText6.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
+		bSizer9.Add( self.m_staticText6, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
+
 		self.m_staticText31 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"Jenis", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText31.Wrap( -1 )
 
 		self.m_staticText31.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
-		bSizer9.Add( self.m_staticText31, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer9.Add( self.m_staticText31, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
 		self.m_staticText32 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"Warna", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText32.Wrap( -1 )
 
 		self.m_staticText32.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
-		bSizer9.Add( self.m_staticText32, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer9.Add( self.m_staticText32, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
 		self.m_staticText33 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"Harga", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText33.Wrap( -1 )
 
 		self.m_staticText33.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
-		bSizer9.Add( self.m_staticText33, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer9.Add( self.m_staticText33, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
 		self.m_staticText34 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"Stok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText34.Wrap( -1 )
 
 		self.m_staticText34.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
-		bSizer9.Add( self.m_staticText34, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer9.Add( self.m_staticText34, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
 
 		self.m_panel8.SetSizer( bSizer9 )
@@ -78,17 +85,20 @@ class MyFrame1 ( wx.Frame ):
 		self.m_panel11 = wx.Panel( self.m_panel7, wx.ID_ANY, wx.Point( -1,-1 ), wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer10 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_textCtrl15 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.Point( -1,-1 ), wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl15, 0, wx.ALL, 5 )
+		self.inputID = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputID, 0, wx.ALL, 5 )
 
-		self.m_textCtrl16 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl16, 0, wx.ALL, 5 )
+		self.inputJenis = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.Point( -1,-1 ), wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputJenis, 0, wx.ALL, 5 )
 
-		self.m_textCtrl17 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl17, 0, wx.ALL, 5 )
+		self.inputWarna = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputWarna, 0, wx.ALL, 5 )
 
-		self.m_textCtrl18 = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
-		bSizer10.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+		self.inputHarga = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputHarga, 0, wx.ALL, 5 )
+
+		self.inputStok = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		bSizer10.Add( self.inputStok, 0, wx.ALL, 5 )
 
 
 		self.m_panel11.SetSizer( bSizer10 )
