@@ -441,7 +441,7 @@ class MyFrame9 ( wx.Frame ):
 class MyFrame7 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 554,345 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 181 ) )
@@ -455,13 +455,90 @@ class MyFrame7 ( wx.Frame ):
 
 		bSizer8.Add( self.inputnama, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.m_textCtrl13 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer8.Add( self.m_textCtrl13, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.namacari = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer8.Add( self.namacari, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.klikcari = wx.Button( self, wx.ID_ANY, u"Cari", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.klikcari.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
 		bSizer8.Add( self.klikcari, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.m_staticText19 = wx.StaticText( self, wx.ID_ANY, u"Baju", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText19.Wrap( -1 )
+
+		self.m_staticText19.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Arial Narrow" ) )
+
+		bSizer8.Add( self.m_staticText19, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.tabelcari = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.tabelcari.CreateGrid( 0, 5 )
+		self.tabelcari.EnableEditing( True )
+		self.tabelcari.EnableGridLines( True )
+		self.tabelcari.EnableDragGridSize( False )
+		self.tabelcari.SetMargins( 0, 0 )
+
+		# Columns
+		self.tabelcari.EnableDragColMove( False )
+		self.tabelcari.EnableDragColSize( True )
+		self.tabelcari.SetColLabelSize( 30 )
+		self.tabelcari.SetColLabelValue( 0, u"Jenis" )
+		self.tabelcari.SetColLabelValue( 1, u"Warna" )
+		self.tabelcari.SetColLabelValue( 2, u"Lingkar Dada" )
+		self.tabelcari.SetColLabelValue( 3, u"Panjang Baju" )
+		self.tabelcari.SetColLabelValue( 4, u"Nama" )
+		self.tabelcari.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.tabelcari.EnableDragRowSize( True )
+		self.tabelcari.SetRowLabelSize( 80 )
+		self.tabelcari.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.tabelcari.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer8.Add( self.tabelcari, 0, wx.ALL, 5 )
+
+		self.m_staticText20 = wx.StaticText( self, wx.ID_ANY, u"Celana", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText20.Wrap( -1 )
+
+		self.m_staticText20.SetFont( wx.Font( 10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Arial Narrow" ) )
+
+		bSizer8.Add( self.m_staticText20, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+		self.tabelcelana = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.tabelcelana.CreateGrid( 0, 5 )
+		self.tabelcelana.EnableEditing( True )
+		self.tabelcelana.EnableGridLines( True )
+		self.tabelcelana.EnableDragGridSize( False )
+		self.tabelcelana.SetMargins( 0, 0 )
+
+		# Columns
+		self.tabelcelana.EnableDragColMove( False )
+		self.tabelcelana.EnableDragColSize( True )
+		self.tabelcelana.SetColLabelSize( 30 )
+		self.tabelcelana.SetColLabelValue( 0, u"Jenis" )
+		self.tabelcelana.SetColLabelValue( 1, u"Warna" )
+		self.tabelcelana.SetColLabelValue( 2, u"Lingkar Pinggang" )
+		self.tabelcelana.SetColLabelValue( 3, u"Panjang Celana" )
+		self.tabelcelana.SetColLabelValue( 4, u"Nama" )
+		self.tabelcelana.SetColLabelValue( 5, u"Jenis" )
+		self.tabelcelana.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.tabelcelana.EnableDragRowSize( True )
+		self.tabelcelana.SetRowLabelSize( 80 )
+		self.tabelcelana.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.tabelcelana.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer8.Add( self.tabelcelana, 0, wx.ALL, 5 )
 
 
 		self.SetSizer( bSizer8 )
