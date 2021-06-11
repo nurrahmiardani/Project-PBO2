@@ -473,7 +473,7 @@ class MyFrame7 ( wx.Frame ):
 		self.tabelcari = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.tabelcari.CreateGrid( 0, 5 )
+		self.tabelcari.CreateGrid( 1, 6 )
 		self.tabelcari.EnableEditing( True )
 		self.tabelcari.EnableGridLines( True )
 		self.tabelcari.EnableDragGridSize( False )
@@ -488,6 +488,7 @@ class MyFrame7 ( wx.Frame ):
 		self.tabelcari.SetColLabelValue( 2, u"Lingkar Dada" )
 		self.tabelcari.SetColLabelValue( 3, u"Panjang Baju" )
 		self.tabelcari.SetColLabelValue( 4, u"Nama" )
+		self.tabelcari.SetColLabelValue( 5, u"Status" )
 		self.tabelcari.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
@@ -511,7 +512,7 @@ class MyFrame7 ( wx.Frame ):
 		self.tabelcelana = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.tabelcelana.CreateGrid( 0, 5 )
+		self.tabelcelana.CreateGrid( 0, 6 )
 		self.tabelcelana.EnableEditing( True )
 		self.tabelcelana.EnableGridLines( True )
 		self.tabelcelana.EnableDragGridSize( False )
@@ -527,6 +528,7 @@ class MyFrame7 ( wx.Frame ):
 		self.tabelcelana.SetColLabelValue( 3, u"Panjang Celana" )
 		self.tabelcelana.SetColLabelValue( 4, u"Nama" )
 		self.tabelcelana.SetColLabelValue( 5, u"Jenis" )
+		self.tabelcelana.SetColLabelValue( 6, u"Status" )
 		self.tabelcelana.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
