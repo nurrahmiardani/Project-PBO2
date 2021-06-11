@@ -116,9 +116,12 @@ class Beranda_penjahit(Awalan.beranda_penjahit_frame):
     def __init__(self, parent):
         super().__init__(parent)
     
-    def btn_pilihKain( self, event ):
+    def btn_pilihkan( self, event ):
         pil = Kain(parent=self)
         pil.Show()
+
+    def btn_pesanan(self, event):
+        pil1 = 
         
 
 class frame (home.MyFrame1):
