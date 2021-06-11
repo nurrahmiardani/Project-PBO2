@@ -31,7 +31,7 @@ class halaman_awal ( wx.Frame ):
 		self.m_staticText11 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"Selamat Datang", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText11.Wrap( -1 )
 
-		self.m_staticText11.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText11.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 		self.m_staticText11.SetForegroundColour( wx.Colour( 230, 230, 0 ) )
 		self.m_staticText11.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
@@ -40,7 +40,7 @@ class halaman_awal ( wx.Frame ):
 		self.m_staticText12 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"Di SMARTWING", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText12.Wrap( -1 )
 
-		self.m_staticText12.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText12.SetFont( wx.Font( 18, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 		self.m_staticText12.SetForegroundColour( wx.Colour( 221, 221, 0 ) )
 		self.m_staticText12.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
@@ -49,13 +49,14 @@ class halaman_awal ( wx.Frame ):
 		self.m_staticText13 = wx.StaticText( self.m_panel16, wx.ID_ANY, u"^_^", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText13.Wrap( -1 )
 
-		self.m_staticText13.SetFont( wx.Font( 14, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText13.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 		self.m_staticText13.SetForegroundColour( wx.Colour( 235, 122, 20 ) )
 		self.m_staticText13.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_SCROLLBAR ) )
 
 		bSizer14.Add( self.m_staticText13, 0, wx.ALIGN_CENTER|wx.ALL, 15 )
 
-		self.next = wx.Button( self.m_panel16, wx.ID_ANY, u"Next", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.next = wx.Button( self.m_panel16, wx.ID_ANY, u"Next", wx.DefaultPosition, wx.Size( 150,35 ), 0 )
+		self.next.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.next.SetBackgroundColour( wx.Colour( 240, 240, 240 ) )
 
 		bSizer14.Add( self.next, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
@@ -104,14 +105,14 @@ class pilihan_frame ( wx.Frame ):
 		self.m_staticText12 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Silahkan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText12.Wrap( -1 )
 
-		self.m_staticText12.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText12.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 
 		bSizer11.Add( self.m_staticText12, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
 
 		self.m_staticText13 = wx.StaticText( self.m_panel15, wx.ID_ANY, u"Pilih Salah Satu ^_^", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.m_staticText13.Wrap( -1 )
 
-		self.m_staticText13.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
+		self.m_staticText13.SetFont( wx.Font( 18, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Comic Sans MS" ) )
 
 		bSizer11.Add( self.m_staticText13, 0, wx.ALIGN_CENTER|wx.ALL, 10 )
 
@@ -124,12 +125,14 @@ class pilihan_frame ( wx.Frame ):
 		self.m_panel14 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		gSizer6 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.penjahit_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Penjahit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.penjahit_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Penjahit", wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		self.penjahit_btn.SetFont( wx.Font( 16, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.penjahit_btn.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOTEXT ) )
 
 		gSizer6.Add( self.penjahit_btn, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
-		self.pelanggan_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Pelanggan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.pelanggan_btn = wx.Button( self.m_panel14, wx.ID_ANY, u"Pelanggan", wx.DefaultPosition, wx.Size( 200,-1 ), 0 )
+		self.pelanggan_btn.SetFont( wx.Font( 16, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.pelanggan_btn.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOTEXT ) )
 		self.pelanggan_btn.SetBackgroundColour( wx.Colour( 145, 160, 217 ) )
 
@@ -187,6 +190,8 @@ class login_penjahit_frame ( wx.Frame ):
 		self.user_label_penjahit = wx.StaticText( self.atas_panel, wx.ID_ANY, u"Username", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.user_label_penjahit.Wrap( -1 )
 
+		self.user_label_penjahit.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
 		gSizer2.Add( self.user_label_penjahit, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_RIGHT|wx.ALL, 5 )
 
 		self.isi_user_penjahit = wx.TextCtrl( self.atas_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -194,6 +199,8 @@ class login_penjahit_frame ( wx.Frame ):
 
 		self.psw_label_penjahit = wx.StaticText( self.atas_panel, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.psw_label_penjahit.Wrap( -1 )
+
+		self.psw_label_penjahit.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
 		gSizer2.Add( self.psw_label_penjahit, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_RIGHT|wx.ALL, 5 )
 
@@ -209,10 +216,13 @@ class login_penjahit_frame ( wx.Frame ):
 		self.bawah_panel = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer2 = wx.BoxSizer( wx.VERTICAL )
 
-		self.login_penjahit = wx.Button( self.bawah_panel, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.login_penjahit = wx.Button( self.bawah_panel, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.Size( 165,-1 ), 0 )
+		self.login_penjahit.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
 		bSizer2.Add( self.login_penjahit, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
-		self.registrasi_penjahit = wx.Button( self.bawah_panel, wx.ID_ANY, u"Registrasi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.registrasi_penjahit = wx.Button( self.bawah_panel, wx.ID_ANY, u"Registrasi", wx.DefaultPosition, wx.Size( 165,-1 ), 0 )
+		self.registrasi_penjahit.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 		self.registrasi_penjahit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 		self.registrasi_penjahit.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
 
@@ -269,6 +279,8 @@ class regis_penjahit_frame ( wx.Frame ):
 		self.username_label = wx.StaticText( self.m_panel11, wx.ID_ANY, u"Username", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.username_label.Wrap( -1 )
 
+		self.username_label.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+
 		gSizer4.Add( self.username_label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_RIGHT|wx.ALL, 5 )
 
 		self.username_baru = wx.TextCtrl( self.m_panel11, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -276,6 +288,8 @@ class regis_penjahit_frame ( wx.Frame ):
 
 		self.pass_label = wx.StaticText( self.m_panel11, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.pass_label.Wrap( -1 )
+
+		self.pass_label.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
 
 		gSizer4.Add( self.pass_label, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALIGN_RIGHT|wx.ALL, 5 )
 
@@ -291,8 +305,9 @@ class regis_penjahit_frame ( wx.Frame ):
 		self.m_panel12 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer8 = wx.BoxSizer( wx.VERTICAL )
 
-		self.regis_penjahit = wx.Button( self.m_panel12, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.regis_penjahit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.regis_penjahit = wx.Button( self.m_panel12, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.Size( 130,-1 ), 0 )
+		self.regis_penjahit.SetFont( wx.Font( 12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" ) )
+		self.regis_penjahit.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
 		self.regis_penjahit.SetBackgroundColour( wx.Colour( 24, 219, 19 ) )
 
 		bSizer8.Add( self.regis_penjahit, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
