@@ -106,12 +106,21 @@ class Kain(desain.MyFrame1):
             cursor.execute(data, isian)
             conn.commit()
             conn.close()
+            conn = sqlite3.connect('myDB.db')
+            cursor = conn.cursor()
+            data = cursor.execute("SELECT * FROM kain").fetchall()
+            conn.commit()
+            conn.close()
+            for baris in range(len(data)):
+                self.m_grid1.DeleteRows(id)
+                for kolom in range (len(data[baris])):
+                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
             print("Data berhasil dihapus")
             wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 
         else : 
             print("Data gagal ")
-            wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
+            wx.MessageBox ("Data gagal dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 
 app = wx.App()
 tampilan = Kain(parent=None).Show()
