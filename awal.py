@@ -80,7 +80,7 @@ class Login_Pelanggan(Awalan.login_pelanggan_frame):
         password = self.isi_psw_penjahit.GetValue()
         conn = sqlite3.connect('pesananbaju.db')
         cursor = conn.cursor()
-        cek_akun = ("SELECT * FROM akun_penjahit WHERE username = ? AND password = ?")
+        cek_akun = ("SELECT * FROM akun_pelanggan WHERE username = ? AND password = ?")
         cursor.execute(cek_akun,(username,password))
         results = cursor.fetchall()
         if results :
@@ -111,7 +111,7 @@ class Registrasi_Pelanggan(Awalan.regis_pelanggan_frame):
         else :
             conn = sqlite3.connect('pesananbaju.db')
             cursor = conn.cursor()
-            cursor.execute("INSERT INTO akun_penjahit(username,password) VALUES(?,?)",(username,password))
+            cursor.execute("INSERT INTO akun_pelanggan(username,password) VALUES(?,?)",(username,password))
             conn.commit()
             conn.close()
             wx.MessageBox("Data BERHASIL disimpan")
