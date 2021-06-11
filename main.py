@@ -24,7 +24,7 @@ class Kain(desain.MyFrame1):
             self.inputWarna.SetValue("") 
             self.inputHarga.SetValue("") 
             self.inputStok.SetValue("") 
-            # conn = sqlite3.connect('pesananbaju.db') 
+            # conn = sqlite3.connect('myDB.db') 
             # cursor = conn.cursor()
             # data = cursor.execute("SELECT * FROM kain").fetchall()
             # conn.close()
@@ -62,7 +62,7 @@ class Kain(desain.MyFrame1):
         elif not harga.isdecimal() or not stok.isdecimal():
             wx.MessageBox ('Harga dan Stok harus berupa angka, mohon isi dengan kembali dengan benar')
         elif not (wx.OK):
-            self.inputID.SetValue()
+            self.inputID.SetValue("")
             self.inputJenis.SetValue("")
             self.inputWarna.SetValue("") 
             self.inputHarga.SetValue("") 
@@ -74,22 +74,44 @@ class Kain(desain.MyFrame1):
             # self.data = "update kain set jenis = ?,warna = ?, harga = ?, stok = ? where ID = ? "
             # self.isian = (self.jenis, self.warna, self.harga, self.stok, self.ID)
             data = "UPDATE kain SET jenis = ?, warna = ?, harga = ?, stok = ? where ID=?"
-            isian = (id, jenis, warna, harga, stok)
+            isian = (jenis, warna, harga, stok, id)
             cursor.execute(data, isian)
             data = cursor.execute("SELECT * FROM kain").fetchall()
             conn.commit()
             conn.close()
-            # for baris in range(len(data)):
-            #     self.m_grid1.AppendRows()
-            #     for kolom in range (len(data[baris])):
-            #         self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
-            # print("Data berhasil diupdate")
-            # wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
+            for baris in range(len(data)):
+                self.m_grid1.AppendRows()
+                for kolom in range (len(data[baris])):
+                    self.m_grid1.SetCellValue(baris, kolom, str(data[baris][kolom]))
+            print("Data berhasil diupdate")
+            wx.MessageBox ("Data berhasil diupdate", "Information", wx.OK | wx.ICON_INFORMATION)
 
+    def delete( self, event ):
+        id = self.inputID.GetValue()
+        # jenis = self.inputJenis.GetValue()
+        # warna = self.inputWarna.GetValue()
+        # harga = self.inputHarga.GetValue()
+        # stok = self.inputStok.GetValue()
 
-		
+        if (wx.OK):
+            self.inputID.SetValue("")
+            # self.inputJenis.SetValue("")
+            # self.inputWarna.SetValue("") 
+            # self.inputHarga.SetValue("") 
+            # self.inputStok.SetValue("")
+            conn = sqlite3.connect('myDB.db')
+            cursor = conn.cursor()
+            data = "DELETE from kain where ID=?"
+            isian = (id)
+            cursor.execute(data, isian)
+            conn.commit()
+            conn.close()
+            print("Data berhasil dihapus")
+            wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 
-	
+        else : 
+            print("Data gagal ")
+            wx.MessageBox ("Data berhasil dihapus", "Information", wx.OK | wx.ICON_INFORMATION)
 
 app = wx.App()
 tampilan = Kain(parent=None).Show()
