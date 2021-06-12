@@ -75,6 +75,7 @@ class MyFrame1 ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.Bind( wx.EVT_CLOSE, self.MyFrame1OnClose )
 		self.pesanklik.Bind( wx.EVT_BUTTON, self.btn_pesan )
 		self.cekklik.Bind( wx.EVT_BUTTON, self.btn_cek )
 		self.kainklik.Bind( wx.EVT_BUTTON, self.btn_daftar )
@@ -85,6 +86,9 @@ class MyFrame1 ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def MyFrame1OnClose( self, event ):
+		event.Skip()
+
 	def btn_pesan( self, event ):
 		event.Skip()
 
